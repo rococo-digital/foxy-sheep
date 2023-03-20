@@ -1,0 +1,81 @@
+.blog-slider {
+  padding: 80px 0 0 0;
+  overflow-x: hidden;
+  .slider-init {
+    /* the slides */
+    .slick-slide {
+      margin:0 12px;
+      @include media-breakpoint-up(md){
+        margin: 0 27px;
+      }
+    }
+    /* the parent */
+    .slick-list {
+      margin:0 -12px;
+      @include media-breakpoint-up(md){
+        margin: 0 -27px;
+      }
+      overflow: visible;
+    }
+  }
+
+
+  .slick-arrows {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    //gap: 15px;
+    & * + * {
+      margin-left: 15px;
+    }
+    button {
+      background-color: $green100;
+      color: $white;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      border-radius: 3px;
+    }
+  }
+  .title-row {
+    margin-bottom: 40px;
+  }
+  .slider-init-nav__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .slider-init-nav {
+
+    width: 85%;
+    @include media-breakpoint-down(lg){
+      width: 75%;
+    }
+    .slick-list {
+      background: #E3E3E3;
+      height: 5px;
+    }
+    .slick-slide {
+      width: 100%;
+      cursor: pointer;
+    }
+    .slick-current {
+      background: $green400;
+    }
+
+  }
+  .inline-link {
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: $semiBold;
+    @include letter-spacing(120);
+    color: $green200;
+    @include media-breakpoint-down(lg){
+      margin-left: 1rem;
+    }
+  }
+
+}

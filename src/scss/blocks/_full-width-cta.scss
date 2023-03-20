@@ -1,0 +1,32 @@
+.full-width-cta {
+  padding: 45px 0;
+  background-size: 100%;
+  background-position: center bottom;
+  background-size:cover;
+  //Tablet
+  @include media-breakpoint-up(md){
+    padding-top: 190px;
+    padding-bottom: 150px;
+  }
+  //Desktop
+  @include media-breakpoint-up(lg){
+
+  }
+
+  .subtitle {
+    margin-bottom: 30px;
+    @include rfs(47px);
+    line-height: get-line-height(47, 48);
+    font-weight: $semiBold;
+  }
+
+  h2 {
+    margin-bottom: 50px;
+    @include rfs(17px);
+    line-height: get-line-height(17, 20);
+    font-weight: $semiBold;
+    display: block;
+  }
+
+
+}

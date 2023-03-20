@@ -1,0 +1,138 @@
+//Navigation
+
+.masthead__nav {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @include media-breakpoint-up(md){
+    gap: 20px;
+    gap: 2vw;
+  }
+  //Desktop
+  @include media-breakpoint-up(xxl){
+    gap: 40px;
+  }
+
+  a {
+    color: $green200;
+    font-weight: $semiBold;
+    transition: $trans;
+
+    &:hover {
+      color: $green400;
+    }
+
+    //Tablet
+    @include media-breakpoint-up(md){
+      @include rfs(18px);
+    }
+    //Desktop
+    @include media-breakpoint-up(xxl){
+      @include rfs(20px);
+      line-height: get-line-height(20, 54);
+    }
+
+  }
+
+}
+
+body:not(.search){
+  .current-menu-item, .current-menu-item.current_page_parent {
+    a {
+      @include media-breakpoint-up(lg){
+        color: $green400;
+      }
+    }
+  }
+}
+
+.masthead__sidenav {
+  position: fixed;
+  width: 100%;
+  right: 0;
+  top: 0;
+  height:100vh;
+  background: $green400;
+  transition: $trans;
+  transform: translateX(-100%);
+  z-index: 9999;
+  top: 140px;
+  height: calc(100vh - 140px);
+  overflow: scroll;
+
+  @include media-breakpoint-down(md){
+    top: 124px;
+    height: calc(100% - 124px);
+  }
+
+  @include media-breakpoint-down(sm){
+    top: 112px;
+    height: calc(100% - 112px);
+  }
+
+  ul.sub-menu {
+    opacity: 0.5;
+    margin-top: 15px;
+    border-top: solid 1px $white;
+    padding-top: 10px;
+  }
+
+  &-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    > div {
+      padding: 2rem 0;
+    }
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    li {
+
+      display: block;
+      a {
+        font-size: 16px;
+        color: $white;
+        &:hover {
+          color: $green100;
+        }
+      }
+    }
+  }
+
+  &.active {
+    transform: translateX(0%);
+  }
+
+}
+
+.current-menu-parent {
+  a {
+    color: $green400;
+  }
+  .current-menu-item a {
+    color: $green000!important;
+  }
+}
+
+.blog, .single-post {
+  .current_page_parent {
+    a {
+      color: $green000;
+      @include media-breakpoint-up(lg){
+        color: $green400;
+      }
+    }
+  }
+}

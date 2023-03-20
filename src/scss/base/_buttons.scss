@@ -1,0 +1,25 @@
+.button {
+  text-transform: uppercase;
+  transition: $trans;
+  font-weight: $bold;
+  @include letter-spacing(120);
+  @include rfs(15px);
+  line-height: get-line-height(15, 18);
+  &--primary {
+    min-width: 185px;
+    display: inline-block;
+    text-align: center;
+    padding: 18px 23px;
+    background: $green100;
+    color: $white;
+    border-radius: 2.77px;
+    &:hover {
+      background: $green200;
+      color: $white;
+    }
+  }
+}
+.single_add_to_cart_button.disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}

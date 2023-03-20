@@ -1,0 +1,124 @@
+.form-block {
+  padding: 65px 0;
+
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__contact {
+    span {
+      font-size: 25px;
+      font-weight: $bold;
+    }
+    div:first-of-type{
+      a {
+        color: $darkgrey;
+      }
+    }
+
+    div:nth-child(2){
+      margin-bottom: 40px;
+    }
+
+    div:nth-child(3){
+      p {
+        margin-bottom: 0;
+      }
+    }
+
+
+    a {
+      font-size: 25px;
+      font-weight: $bold;
+      color: $green000;
+    }
+
+    div:nth-child(4){
+      a {
+        font-size: 19px;
+        font-weight: $regular;
+      }
+    }
+
+
+
+    div:last-of-type {
+      a {
+        font-size: 19px;
+      }
+    }
+  }
+
+  .form-wrapper {
+    background-color: $white;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba($black, 0.1);
+    padding: 30px;
+    //Tablet
+    @include media-breakpoint-up(md){
+      margin-top: -260px;
+    }
+    //Tablet
+    @include media-breakpoint-up(lg){
+        padding: 55px 60px 44px;
+        position: relative;
+
+    }
+
+    @include media-breakpoint-down(xl){
+      .gform_wrapper.gravity-theme .gfield.gfield--width-half {
+        width: 100%;
+        grid-column: span 12;
+      }
+    }
+
+    &__title {
+      margin-bottom: 30px;
+    }
+    label {
+      font-size: 19px;
+      opacity: 0.7;
+    }
+    input, textarea {
+      background-color: #ECECEC;
+    }
+    #gfield_consent_description_2_8 {
+      color: $darkgrey!important;
+      @include media-breakpoint-up(xxl){
+        font-size: 19px!important;
+        line-height: 24px!important;
+      }
+      max-width: unset;
+    }
+    #field_2_6{
+      height: 174px;
+      label {
+        top: 15%!important;
+      }
+    }
+    textarea {
+      height: 174px!important;
+    }
+    .gform_inline:after {
+      background-color: #ECECEC;
+      border: solid 2px #ECECEC;
+    }
+    input#input_2_8_1 {
+      opacity: 0;
+    }
+    .gform_wrapper.gravity-theme .gform_fields {
+
+      grid-row-gap: 32px;
+      @include media-breakpoint-up(lg){
+        grid-column-gap: 32px;
+      }
+    }
+  }
+  #gform_submit_button_2 {
+    @extend .no-style-button;
+    @extend .button--primary;
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+  }
+}

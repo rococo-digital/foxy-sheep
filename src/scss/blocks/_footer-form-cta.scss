@@ -1,0 +1,51 @@
+.footer-form-cta {
+  padding: 45px 0 40px;
+  //Tablet
+  @include media-breakpoint-up(md){
+    padding: 95px 0 90px;
+  }
+  //Desktop
+  @include media-breakpoint-up(lg){
+
+  }
+
+  &__title {
+    color: $white;
+    @include rfs(47px);
+    line-height: get-line-height(47, 48);
+    margin-bottom: 30px;
+  }
+  &__form-title {
+    color: $white;
+    @include rfs(47px);
+    line-height: get-line-height(47, 50);
+    margin-bottom: 21px;
+  }
+  &__details {
+    a {
+      display: block;
+      color: $green400;
+      @include rfs(25px);
+      font-weight: $bold;
+      line-height: get-line-height(25, 42);
+      @include media-breakpoint-down(sm){
+        font-size: 18px;
+      }
+      &:first-of-type {
+        @include rfs(47px);
+        font-weight: $semiBold;
+        line-height: get-line-height(47, 48);
+        margin-bottom: 25px;
+        @include media-breakpoint-down(sm){
+          font-size: 18px;
+        }
+      }
+      svg {
+        margin-right: 20px;
+      }
+    }
+  }
+}
+div#gfield_consent_description_1_5 {
+  font-size: 12px !important;
+}

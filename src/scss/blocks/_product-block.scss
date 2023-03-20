@@ -1,0 +1,24 @@
+.products-block {
+
+  h1, .subtitle {
+    color: white;
+  }
+
+  .subtitle {
+    margin-bottom: 40px;
+  }
+
+  h1 {
+    margin-bottom: 40px;
+  }
+
+  p {
+    opacity: 0.7;
+    color: white;
+  }
+
+  &__content {
+    margin-bottom: 55px;
+  }
+
+}

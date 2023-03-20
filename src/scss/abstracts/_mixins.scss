@@ -1,0 +1,13 @@
+@mixin letter-spacing($spacing) {
+  letter-spacing: ($spacing / 1000) * 1em;
+}
+
+@mixin button($color, $bg, $fontSize: 15, $lineHeight: 18){
+  @include rfs($fontSize);
+  line-height: get-line-height($fontSize, $lineHeight);
+  background: $bg;
+  color: $color;
+  border-radius: 3px;
+  text-transform: uppercase;
+  @include letter-spacing(120);
+}

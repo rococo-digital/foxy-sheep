@@ -1,0 +1,39 @@
+.product-cta {
+
+  h2, .subtitle {
+    color: white;
+  }
+
+  h2 {
+    margin-bottom: 55px;
+  }
+
+  .col-md-6:hover {
+     .button {
+      background: #4ca585;
+    }
+  }
+
+  .slick-arrows {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    //gap: 15px;
+    & * + * {
+      margin-left: 15px;
+    }
+    button {
+      background-color: $green100;
+      color: $white;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      border-radius: 3px;
+    }
+    margin-bottom:1rem;
+  }
+
+}

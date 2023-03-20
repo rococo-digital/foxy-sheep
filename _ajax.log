@@ -1,0 +1,8 @@
+<pre>Array
+(
+    [action] => woocommerce_ajax_add_to_cart
+    [product_id] => 71
+    [product_sku] => 
+    [quantity] => 1
+    [variation_id] => 450
+)

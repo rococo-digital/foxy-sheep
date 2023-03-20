@@ -1,0 +1,83 @@
+h1, h2, h3, h4, h5, h6 {
+
+}
+
+h1 {
+  @include rfs(57px);
+  line-height: get-line-height(57, 64);
+  font-weight: $semiBold;
+}
+
+h2 {
+  @include rfs(47px);
+  line-height: get-line-height(47, 48);
+  font-weight: $semiBold;
+}
+
+h3 {
+  @include rfs(21px);
+  line-height: get-line-height(21, 34);
+  font-weight: $bold;
+}
+
+.lead {
+  p {
+
+  }
+}
+
+p, li {
+  @include rfs(16px);
+  line-height: get-line-height(16, 26);
+  font-weight: $regular;
+  color: $fontBody;
+   //Tablet
+   @include media-breakpoint-up(md){
+     @include rfs(19px);
+     line-height: get-line-height(19, 29);
+   }
+
+}
+
+li::marker {
+  color: $green200;
+}
+
+.subtitle {
+  @include rfs(17px);
+  @include letter-spacing(120);
+  line-height: get-line-height(17, 20);
+  text-transform: uppercase;
+  font-weight: $semiBold;
+  display: block;
+  color: $green200;
+}
+
+.section__title-big {
+  @include rfs(57px);
+  line-height: get-line-height(57, 64);
+  font-weight: $semiBold;
+}
+
+.section__title {
+  @include rfs(47px);
+  line-height: get-line-height(47, 54);
+  font-weight: $semiBold;
+}
+
+.the-date {
+  color: #727372;
+  @include rfs(15px);
+  @include letter-spacing(120);
+  line-height: get-line-height(15, 18);
+  margin-bottom: 30px;
+  display: block;
+  text-transform: uppercase;
+}
+
+a {
+  color: $green100;
+  &:hover {
+    color: $green400;
+  }
+}

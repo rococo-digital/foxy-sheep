@@ -1,0 +1,45 @@
+.faq-block {
+  padding-top: 75px;
+  padding-bottom: 50px;
+
+  &__subtitle {
+    margin-bottom: 35px;
+  }
+
+  &__title {
+    margin-bottom: 50px;
+  }
+
+  &__item-title {
+    @include rfs(19px);
+    font-weight: $semiBold;
+    color: $darkgrey;
+  }
+
+  &__item {
+    border-top: solid 0.5px #B2B5B7;
+    &:first-of-type {
+      border-top: none;
+    }
+    p {
+      color: $darkgrey;
+    }
+  }
+
+  &__item > button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+    gap: 20px;
+    i {
+      color: $green200;
+    }
+    padding: 22px 0;
+    h3 {
+      margin-bottom: 0;
+    }
+  }
+
+}

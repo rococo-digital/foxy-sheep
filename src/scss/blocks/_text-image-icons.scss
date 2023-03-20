@@ -1,0 +1,88 @@
+$topP: 90px;
+.text-image-icons {
+  margin-top: 70px;
+  padding-bottom: 61px;
+  position: relative;
+  //Tablet
+  @include media-breakpoint-up(md){
+    .col-lg-6 {
+      &:last-of-type {
+        padding: 0 2.5rem;
+      }
+    }
+  }
+  //Desktop
+  @include media-breakpoint-up(lg){
+    padding-top: $topP;
+    margin-top: $topP;
+  }
+
+  &__title {
+    margin-bottom: 25px;
+  }
+
+  &__title, p {
+    color: $white;
+  }
+
+  &__subtitle {
+    margin-bottom: 25px;
+    color: $green200;
+  }
+
+  .offset-image {
+
+    margin-top: -90px;
+    margin-bottom: 30px;
+    width:110%;
+    margin-left: -15px;
+    //Tablet
+    @include media-breakpoint-up(md){
+      border-radius: 6px;
+      margin-left: -4vw;
+      margin-top: 0;
+    }
+    img {
+      width: 100%;
+    }
+    @media (min-width: 1500px) and (max-width: 1920px){
+      width: 715px!important;
+      max-width: unset;
+      margin-left: -7vw;
+      margin-top: -190px;
+    }
+    &__wrapper {
+      overflow: visible;
+    }
+  }
+
+  .icon {
+    &__row {
+      margin-top: 40px;
+    }
+    &__wrapper {
+      max-width: 120px;
+      display: flex;
+      max-height: 82px;
+      margin-bottom: 31px;
+      img {
+        max-width: 80px;
+      }
+    }
+    h3 {
+      @include rfs(25px);
+      margin-bottom: 25px;
+      color: $white;
+    }
+
+    &__content {
+      max-width: 90%;
+      p {
+        opacity: 0.7;
+      }
+    }
+  }
+
+
+}
+

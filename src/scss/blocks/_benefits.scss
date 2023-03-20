@@ -1,0 +1,114 @@
+.benefits {
+  padding-top: 40px;
+  padding-bottom: 45px;
+  //Tablet
+  @include media-breakpoint-up(md){
+      padding-top: 70px;
+      padding-bottom: 115px;
+  }
+
+  &__subtitle {
+    color: $white;
+    margin-bottom: 45px;
+  }
+
+  &__title {
+    color: $white;
+    margin-bottom: 50px;
+  }
+
+  &__content {
+    margin-bottom: 70px;
+    @include media-breakpoint-up(xxl){
+      max-width: 83%;
+      margin: 0 auto;
+      margin-bottom: 70px;
+    }
+   p {
+     color: $white;
+     margin-bottom: 0;
+     opacity: 0.7;
+   }
+
+  }
+
+  &-item {
+    &__content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      margin-bottom: 50px;
+      flex-direction: column;
+      @include media-breakpoint-up(md){
+        flex-direction: row;
+      }
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+
+    &__image {
+        flex:0 1 33.333%;
+      @include media-breakpoint-down(md){
+        order: 1;
+      }
+        img {
+          border-radius: 100%;
+          border: solid 10px $white;
+          margin: 0 auto;
+          margin-bottom: 40px;
+          @include media-breakpoint-up(md){
+            margin-bottom: 0;
+          }
+        }
+    }
+
+    &__text {
+      @include media-breakpoint-down(md){
+        order: 2;
+      }
+      flex: 0 1 33.333%;
+      h3, p {
+        color: $white;
+      }
+      p {
+        opacity: 0.7;
+        &:last-of-type {
+          margin-bottom: 45px;
+        }
+      }
+      h3 {
+        font-weight: bold;
+        margin-bottom: 35px;
+      }
+    }
+
+  }
+
+}
+
+.text-right{
+  .benefits-item__text {
+    @include media-breakpoint-down(md){
+      padding: 2rem 0;
+    }
+    @include media-breakpoint-up(md){
+      padding: 0 0 0 3rem;
+    }
+  }
+}
+
+.text-left {
+  .benefits-item__text {
+    @include media-breakpoint-up(lg){
+      text-align: right;
+    }
+    padding: 2rem;
+    @include media-breakpoint-down(md){
+      padding: 2rem 0;
+    }
+    @include media-breakpoint-up(md){
+      padding: 0 3rem 0 0;
+    }
+  }
+}
