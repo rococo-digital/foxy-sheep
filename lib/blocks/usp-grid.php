@@ -8,7 +8,7 @@ $content = get_field('content');
 $icon_cards = get_field('icon_cards');
 ?>
 
-<section class="section usp-grid">
+<section class="section usp-grid bg--green400">
     <div class="container">
         <div class="row justify-content-center">
             <?php $i=1; foreach($icon_cards as $icon_card){?>
