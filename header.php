@@ -19,16 +19,25 @@
 
     	<body <?php body_class(); ?>>
 
-            <div class="top-bar bg--green400 text--light">
+            <div id="topbar" class="top-bar bg--green400 text--light">
                 <div class="container position-relative">
                     <div class="row">
                         <div class="col-6">
-                            <?php
-                                social_icons('top-bar__socials social-icons social-icons--flat');
-                            ?>
+                            <div class="masthead__misc justify-content-start">
+                                <div class="masthead__tel">
+                                    <a href="tel:<?php echo $telephone;?>">
+                                        <?php inline_svg('mobile');?>
+                                        <span class="d-none d-xl-block"><?php echo $telephone;?></span>
+                                    </a>
+                                </div>
+                                <div class="masthead__search">
+                                    <button data-search class="no-style-button">
+                                        <?php inline_svg('search');?>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-6 mr-0 ml-auto">
-
+                        <div class="col-6 mr-0 d-flex justify-content-end">
                             <div class="top-bar__icons">
                                 <div class="my-account">
                                     <a href="<?php echo wc_get_account_endpoint_url('dashboard');?>"><?php inline_svg('account');?> <span><?php _e('Account', 'lanocare');?></span></a>
@@ -57,8 +66,6 @@
                <div class="masthead" id="masthead">
                    <div class="container">
                        <div class="row align-items-center">
-
-
                            <div class="col-md-12">
                                <div class="masthead__columns">
                                    <div class="masthead__logo">
@@ -76,17 +83,6 @@
                                    </div>
                                    <div class="masthead__side me-0 ms-auto">
                                        <div class="masthead__misc">
-                                           <div class="masthead__search">
-                                               <button data-search class="no-style-button">
-                                                   <?php inline_svg('search');?>
-                                               </button>
-                                           </div>
-                                           <div class="masthead__tel">
-                                               <a href="tel:<?php echo $telephone;?>">
-                                                   <?php inline_svg('mobile');?>
-                                                   <span class="d-none d-xl-block"><?php echo $telephone;?></span>
-                                               </a>
-                                           </div>
                                            <div class="masthead__burger d-xl-none">
                                                <?php inline_svg('burger');?>
                                            </div>
