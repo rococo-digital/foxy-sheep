@@ -188,6 +188,14 @@ function my_acf_init_block_types() {
         ));
 
         acf_register_block_type(array(
+            'name'              => 'USP Grid',
+            'title'              => 'USP Grid',
+            'render_template'   => 'lib/blocks/usp-grid.php',
+            'category'          => 'formatting',
+            'keywords'          => 'usp',
+        ));
+
+        acf_register_block_type(array(
             'name'              => 'FAQ Block',
             'title'              => 'FAQ Block',
             'render_template'   => 'lib/blocks/faq-block.php',

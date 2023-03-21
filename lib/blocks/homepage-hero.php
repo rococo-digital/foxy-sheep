@@ -28,5 +28,13 @@ $bg = get_field('background');
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="masthead__usp">
+            <?php inline_svg('sustainable');?>
+            <?php inline_svg('carbon-negative');?>
+            <?php inline_svg('non-toxic');?>
+            <?php inline_svg('bio-degradable');?>
+            </div>
+        </div>
     </div>
 </section>

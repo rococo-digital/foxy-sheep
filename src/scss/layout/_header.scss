@@ -28,6 +28,15 @@
 
   }
 
+  &__usp {
+    margin-top: 1rem;
+    
+    svg{
+      margin-right: 0.5rem;
+      height: 5rem;
+    }
+  }
+
   //Misc
   &__misc {
     display: flex;
@@ -133,7 +142,7 @@
       padding: 0;
       padding: 25px 32px;
       margin-left:-15px;
-      margin-top: 21px;
+      margin-top: 0.6rem;
       max-width: 173px;
       width: 100%;
       li {
