@@ -4,7 +4,7 @@ $product = $args;
 
 $product_id = $product->get_id();
 $product_name = $product->get_name();
-
+// $short_description = $product->post->post_excerpt;
 $image = get_field('image', $product_id);
 
 if(!$image['url']){
