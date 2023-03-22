@@ -80,7 +80,6 @@
   }
 
   &__tel {
-    border-right: solid 1px $grey;
     padding:0;
     padding-right: 20px;
     margin: 0;
@@ -223,7 +222,7 @@
 
     }
 
-    a, .cart-icon {
+    a, .cart-icon, button {
       display: flex;
       align-items: center;
       //gap: 13px;

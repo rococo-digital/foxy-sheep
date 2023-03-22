@@ -22,8 +22,8 @@
             <div id="topbar" class="top-bar bg--green400 text--light">
                 <div class="container position-relative">
                     <div class="row">
-                        <div class="col-6">
-                            <div class="masthead__misc justify-content-start">
+                  
+                            <div class="top-bar__icons masthead__misc justify-content-end">
                                 <div class="masthead__tel">
                                     <a href="tel:<?php echo $telephone;?>">
                                         <?php inline_svg('mobile');?>
@@ -32,13 +32,10 @@
                                 </div>
                                 <div class="masthead__search">
                                     <button data-search class="no-style-button">
-                                        <?php inline_svg('search');?>
+                                        <?php inline_svg('search');?><span>Search</span>
                                     </button>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-6 mr-0 d-flex justify-content-end">
-                            <div class="top-bar__icons">
+                           
                                 <div class="my-account">
                                     <a href="<?php echo wc_get_account_endpoint_url('dashboard');?>"><?php inline_svg('account');?> <span><?php _e('Account', 'lanocare');?></span></a>
                                 </div>
@@ -52,7 +49,7 @@
                                 </div>
                             </div>
 
-                        </div>
+                    
                     </div>
 <!--                    <div class="widget_shopping_cart_content">-->
 <!--                        --><?php //woocommerce_mini_cart(); ?>

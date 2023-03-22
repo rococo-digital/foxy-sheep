@@ -553,7 +553,7 @@ function inline_svg($svg){
                 </svg>';
         break;
         case 'search':
-            echo '<svg xmlns="http://www.w3.org/2000/svg" width="25.622" height="25.621" viewBox="0 0 25.622 25.621">
+            echo '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 25.622 25.621">
                   <g id="Group_52" data-name="Group 52" transform="translate(-1124.398 -104.56)">
                     <g id="Group_51" data-name="Group 51">
                       <circle id="Ellipse_2" data-name="Ellipse 2" cx="8.899" cy="8.899" r="8.899" transform="translate(1125.898 106.06)" fill="none" stroke="#90d5ac" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"/>
