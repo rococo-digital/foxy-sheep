@@ -120,7 +120,7 @@ function script_enqueues() {
 	wp_enqueue_script( 'jquery-easing', '//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js', array(), '1.4.1', false );
 
 	wp_enqueue_script( 'custom', get_template_directory_uri() . '/build/js/main.js', array(), '1.0.0', false );
-	wp_enqueue_style( 'style', get_template_directory_uri() . '/build/css/main.css', false, '1.0.0', 'all' );
+	wp_enqueue_style( 'style', get_template_directory_uri() . '/build/css/main.css', false, '1.0.1', 'all' );
     wp_localize_script( 'custom', 'loadmore_params', array(
         'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
         'posts' => json_encode( $wp_query->query_vars ), // everything about your loop is here
