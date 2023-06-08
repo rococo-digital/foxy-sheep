@@ -1,5 +1,5 @@
 @mixin letter-spacing($spacing) {
-  letter-spacing: ($spacing / 1000) * 1em;
+  letter-spacing: math.div($spacing, 1000) * 1em;
 }
 
 @mixin button($color, $bg, $fontSize: 15, $lineHeight: 18){

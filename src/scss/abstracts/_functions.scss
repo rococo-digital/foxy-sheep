@@ -1,17 +1,17 @@
 $vw-viewport: 1920;
 @function get-vw($size){
   $vw-context: $vw-viewport * 0.01 * 1px;
-  @return $size / $vw-context * 1vw;
+  @return math.div($size, $vw-context);
   @return $size;
 }
 
 // helper function to make sure the unit type (px, rem)
 // is removed we want just the raw value no unit
 @function get-value($n) {
-  @return $n / ($n * 0 + 1);
+  @return math.div($n, ($n * 0 + 1));
 }
 
 // pretty simple eh?
 @function get-line-height($font-size, $line-height) {
-  @return get-value($line-height / $font-size);
+  @return get-value(math.div($line-height, $font-size));
 }

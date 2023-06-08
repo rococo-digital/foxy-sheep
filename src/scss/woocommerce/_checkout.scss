@@ -14,7 +14,6 @@
     width: 100%;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (1fr 2%)[12];
     grid-template-columns: repeat(12,1fr);
     grid-template-rows: repeat(auto-fill,auto);
     grid-column-gap: 2%;
@@ -36,7 +35,7 @@
   p#billing_address_2_field,
   p#shipping_address_1_field,
   p#shipping_city_field,
-  p#shipping_address_2_field,
+  p#shipping_address_2_field
   {
     grid-column: span 12;
   }
@@ -81,20 +80,6 @@
     margin-top: 1rem;
   }
 
-
-  p.form-row.woocommerce-SavedPaymentMethods-saveNew.woocommerce-validated:after, label.woocommerce-form__label.woocommerce-form__label-for-checkbox.checkbox:after, label.woocommerce-form__label.woocommerce-form__label-for-checkbox.checkbox:after {
-    //content: "";
-    //left: 0;
-    //top: 0px;
-    //width: 38px;
-    //height: 38px;
-    //border-radius: 4px;
-    //background: white;
-    //pointer-events: none;
-    //position: absolute;
-    //border: solid 2px white;
-    //cursor: pointer;
-  }
   p.form-row.woocommerce-SavedPaymentMethods-saveNew.woocommerce-validated:after, label.woocommerce-form__label.woocommerce-form__label-for-checkbox.checkbox:after{
     background: #f4f4f4;
     border: solid 2px #f4f4f4;
@@ -118,17 +103,6 @@
     background: white!important;
   }
 
-  input#ship-to-different-address-checkbox, input#wc-stripe-new-payment-method, input#terms {
-    //position: relative;
-    //width: 38px!important;
-    //height: 38px;
-    //margin-right: 20px;
-    //opacity: 1;
-    //margin-top: 0px;
-    //border: none;
-    //opacity:0;
-  }
-
   p.form-row.woocommerce-SavedPaymentMethods-saveNew.woocommerce-validated, .label.woocommerce-form__label.woocommerce-form__label-for-checkbox.checkbox {
     position: relative;
   }
@@ -145,6 +119,15 @@
     }
   }
 
+  .thwmscf-wrapper .thwmscf-buttons input.button-next{
+    @extend .button--primary;
+    background-color: $green400;
+  }
+
+  .thwmscf-wrapper .thwmscf-buttons input.button-prev{
+    @extend .button--primary;
+    background-color: $green200;
+  }
 }
 
 .select2-container--default .select2-selection--single .select2-selection__arrow {

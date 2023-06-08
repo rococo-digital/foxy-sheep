@@ -51,8 +51,8 @@
     "webpack-cli": "^4.5.0"
   },
   "scripts": {
-    "prod": "cross-env NODE_ENV=production webpack --mode production --progress",
-    "dev": "cross-env NODE_ENV=development webpack --watch --mode development --progress",
+    "prod": "export NODE_OPTIONS=--openssl-legacy-provider; cross-env NODE_ENV=production webpack --mode production --progress",
+    "dev": "export NODE_OPTIONS=--openssl-legacy-provider; cross-env NODE_ENV=development webpack --watch --mode development --progress",
     "clean": "rm -rf build/*",
     "build": "webpack -v"
   },
