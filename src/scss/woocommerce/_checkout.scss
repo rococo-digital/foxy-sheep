@@ -82,7 +82,7 @@
 
   p.form-row.woocommerce-SavedPaymentMethods-saveNew.woocommerce-validated:after, label.woocommerce-form__label.woocommerce-form__label-for-checkbox.checkbox:after{
     background: #f4f4f4;
-    border: solid 2px #f4f4f4;
+    border: solid 1px #e7e7e7;
   }
   label.woocommerce-form__label.woocommerce-form__label-for-checkbox.checkbox {
     position: relative;
@@ -190,7 +190,7 @@ label.woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-f
   background: white;
   pointer-events: none;
   position: absolute;
-  border: solid 2px white;
+  border: solid 1px #e7e7e7;
   cursor: pointer;
 }
 
@@ -237,7 +237,7 @@ label.woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-f
       background: white;
       pointer-events: none;
       position: absolute;
-      border: solid 2px white;
+      border: solid 1px #e7e7e7;
       cursor: pointer;
     }
     &:checked {
@@ -313,7 +313,7 @@ form.woocommerce-form.woocommerce-form-login.login {
       background: white;
       pointer-events: none;
       position: absolute;
-      border: solid 2px #f4f4f4;
+      border: solid 1px #e7e7e7;
       cursor: pointer;
     }
     &:checked {
