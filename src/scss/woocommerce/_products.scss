@@ -70,7 +70,7 @@
         align-items: center;
         gap: 20px;
         margin-bottom: 50px;
-
+        flex-wrap: wrap;
         //input
         input {
             width: 50px;
@@ -125,7 +125,7 @@
         @include rfs(17px);
         font-weight: $semiBold;
         padding-bottom: 10px;
-        &:first-of-type {
+        &:not(:last-child) {
             margin-right: 40px;
         }
     }

@@ -19,7 +19,10 @@
     }
   }
 }
-.single_add_to_cart_button.disabled {
-  pointer-events: none;
-  opacity: 0.6;
+.single_add_to_cart_button{
+  white-space: nowrap;
+  &.disabled {
+    pointer-events: none;
+    opacity: 0.6;
+  }
 }

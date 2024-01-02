@@ -23,6 +23,17 @@ body {
   -webkit-tap-highlight-color: rgba(0,0,0,.3);
 }
 
+textarea{
+	border-width: 1px;
+}
+
+.screen-reader-text{
+	display: none;
+}
+p.form-row-first + p.form-row-last{
+	margin-top: 0;
+}
+
 .overlay-wrapper {
   position:relative;
   overflow: hidden;

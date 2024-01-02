@@ -197,12 +197,14 @@ function single_custom_tabs(){
     $tabs_desc = get_field('description', $id) ?: get_field('description', 71);
     $custom_tab = get_field('custom_tab', $id);
     $custom_tab_title = get_field('custom_tab_title', $id);
+    $faq_tab = get_field('faq_tab', $id);
 
    echo '<div class="container"><div class="row"><div class="col-lg-12">';
     get_template_part('lib/partials/product', 'tabs', array(
         'description' => $tabs_desc,
         'custom_tab' => $custom_tab,
-        'custom_tab_title' => $custom_tab_title
+        'custom_tab_title' => $custom_tab_title,
+        'faq_tab' => $faq_tab
     ));
     echo '</div></div></div>';
 
