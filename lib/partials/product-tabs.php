@@ -1,9 +1,13 @@
 <?php
 
+global $product;
+global $post;
+$id = $post->ID;
+
 $description = $args['description'];
 $custom_tab = $args['custom_tab'];
 $faq_tab = $args['faq_tab'];
-
+$review_tab = $product->get_review_count();
 
 ?>
 
@@ -17,6 +21,9 @@ $faq_tab = $args['faq_tab'];
         <?php } ?>
         <?php if($faq_tab){?>
                 <a href="#" class="product-tabs__link" data-tab="faqs">FAQ's</a>
+        <?php } ?>
+        <?php if($review_tab){?>
+                <a href="#" class="product-tabs__link" data-tab="reviews">Reviews</a>
         <?php } ?>
     </div>
     <div class="product-tabs__content">
@@ -51,6 +58,17 @@ $faq_tab = $args['faq_tab'];
                     </div>
                 </div>
            
+            </div>
+        <?php } ?>
+        <?php if($review_tab){?>
+            <div data-content="reviews" style="display: none">
+                <?php
+                    comments_template('/single-product-reviews.php' ); 
+
+                    
+                ?>
+
+
             </div>
         <?php } ?>
     </div>

@@ -228,6 +228,7 @@ function single_custom_icons(){
 
 add_action('woocommerce_single_product_summary', 'single_custom_icons', 50);
 
+
 //add_filter( 'woocommerce_dropdown_variation_attribute_options_args', 'filter_dropdown_args', 10 );
 //
 //function filter_dropdown_args( $args ) {
