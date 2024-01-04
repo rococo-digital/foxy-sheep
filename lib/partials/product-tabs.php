@@ -23,7 +23,7 @@ $review_tab = $product->get_review_count();
                 <a href="#" class="product-tabs__link" data-tab="faqs">FAQ's</a>
         <?php } ?>
         <?php if(comments_open()){?>
-                <a href="#" class="product-tabs__link" data-tab="reviews">Reviews</a>
+                <a href="#" id="reviews" class="product-tabs__link" data-tab="reviews">Reviews</a>
         <?php } ?>
     </div>
     <div class="product-tabs__content">
