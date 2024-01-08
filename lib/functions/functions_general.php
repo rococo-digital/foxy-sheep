@@ -746,7 +746,7 @@ function loadmore_posts_ajax_handler()
         // run the loop
         $i = 1;while (have_posts()): the_post();?>
 
-		                <?php if ($i == 1 || $i == 2 || $i == 6 || $i == 7) {
+						                <?php if ($i == 1 || $i == 2 || $i == 6 || $i == 7) {
                 $size = '6';
             } else {
                 $size = '4';
@@ -755,10 +755,10 @@ function loadmore_posts_ajax_handler()
                 $size,
             )
             ?>
-		                    <div class="col-md-<?php echo $size; ?>" <?php echo $i; ?>>
-		                        <?php get_template_part('lib/partials/blog', 'post', $args);?>
-		                    </div>
-		                <?php
+						                    <div class="col-md-<?php echo $size; ?>" <?php echo $i; ?>>
+						                        <?php get_template_part('lib/partials/blog', 'post', $args);?>
+						                    </div>
+						                <?php
         if ($i == 8) {
                 $i = 1;
             } else {
@@ -884,136 +884,137 @@ add_action('comment_post', 'review_submit_notice', 10, 2);
 function review_submit_notice($comment_id, $is_approved)
 {
     // if (('product' === get_post_type(absint($commentdata['comment_post_ID'])))) {
- 
-   
-        $api_key = get_option('klaviyo_private_api_key');
-        $comment = get_comment( $comment_id );
-        $comment_author_email = $comment->comment_author_email;
-        $event_key = "Commented";
 
-        $curl = curl_init();
+    $api_key = get_option('klaviyo_private_api_key');
+    $comment = get_comment($comment_id);
+    $comment_author_email = $comment->comment_author_email;
+    $product_id = $comment->comment_post_ID;
+    $product_title = get_the_title($product_id);
+    $event_key = "Commented";
 
-        curl_setopt_array($curl, [
-            CURLOPT_URL => "https://a.klaviyo.com/api/events/",
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => "",
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 30,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => "POST",
-            CURLOPT_POSTFIELDS => json_encode([
-                'data' => [
-                    'type' => 'event',
-                    'attributes' => [
-                        'time' => date('m/d/Y h:i:s a', time()),
-                        'metric' => [
-                            'data' => [
-                                'type' => 'metric',
-                                'attributes' => [
-                                    'name' => $event_key,
-                                ],
+    $curl = curl_init();
+
+    curl_setopt_array($curl, [
+        CURLOPT_URL => "https://a.klaviyo.com/api/events/",
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => "",
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 30,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => "POST",
+        CURLOPT_POSTFIELDS => json_encode([
+            'data' => [
+                'type' => 'event',
+                'attributes' => [
+                    'properties' => [
+                        'Brand' => 'Lanocare',
+                        'ProductName' => $product_title,
+                    ],
+                    'metric' => [
+                        'data' => [
+                            'type' => 'metric',
+                            'attributes' => [
+                                'name' => 'Commented',
+                                'service' => 'string',
                             ],
                         ],
-                        'profile' => [
-                            'data' => [
-                                'type' => 'profile',
-                                'attributes' => [
-                                    'email' => $comment_author_email
-                                  
-                                ],
+                    ],
+                    'profile' => [
+                        'data' => [
+                            'type' => 'profile',
+                            'attributes' => [
+                                'email' => $comment_author_email,
                             ],
                         ],
                     ],
                 ],
-            ]),
-            CURLOPT_HTTPHEADER => [
-                "Authorization: " . $api_key,
-                "accept: application/json",
-                "content-type: application/json",
-                "revision: 2023-12-15",
             ],
-        ]);
+        ]),
+        CURLOPT_HTTPHEADER => [
+            "Authorization: Klaviyo-API-Key " . $api_key,
+            "accept: application/json",
+            "content-type: application/json",
+            "revision: 2023-12-15",
+        ],
+    ]);
 
-        $response = curl_exec($curl);
+    $response = curl_exec($curl);
 
-        
-        
-        $err = curl_error($curl);
-        
-        curl_close($curl);
-        
-        if ($err) {
-            echo "cURL Error #:" . $err;
-        } else {
-            echo $response;
-        }
+    $err = curl_error($curl);
 
-  
+    curl_close($curl);
+
+    if ($err) {
+        echo "cURL Error #:" . $err;
+    } else {
+        echo $response;
+    }
+
     // }
 }
 
 add_action('admin_menu', 'klaviyo_key_register_my_api_keys_page');
 
-function klaviyo_key_register_my_api_keys_page() {
-  add_submenu_page(
-    'tools.php', // Add our page under the "Tools" menu
-    'Klaviyo API Key', // Title in menu
-    'Klaviyo API Key', // Page title
-    'manage_options', // permissions
-    'klaviyo-api-keys', // slug for our page
-    'klaviyo_key_add_api_keys_callback' // Callback to render the page
-  );
+function klaviyo_key_register_my_api_keys_page()
+{
+    add_submenu_page(
+        'tools.php', // Add our page under the "Tools" menu
+        'Klaviyo API Key', // Title in menu
+        'Klaviyo API Key', // Page title
+        'manage_options', // permissions
+        'klaviyo-api-keys', // slug for our page
+        'klaviyo_key_add_api_keys_callback' // Callback to render the page
+    );
 }
 
-function klaviyo_key_add_api_keys_callback() { ?>
+function klaviyo_key_add_api_keys_callback()
+{?>
 
     <div class="wrap"></div>
         <h2>Klaviyo API key settings</h2>
         <?php
 
-          // Check if status is 1 which means a successful options save just happened
-          if(isset($_GET['status']) && $_GET['status'] == 1): ?>
-            
+    // Check if status is 1 which means a successful options save just happened
+    if (isset($_GET['status']) && $_GET['status'] == 1): ?>
+
             <div class="notice notice-success inline">
               <p>Options Saved!</p>
             </div>
 
           <?php endif;
 
-        
-        ?>
-        <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="POST">
+    ?>
+        <form action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="POST">
 
             <h3>Your private key</h3>
 
             <!-- The nonce field is a security feature to avoid submissions from outside WP admin -->
-            <?php wp_nonce_field( 'klaviyo_key_api_options_verify'); ?>
+            <?php wp_nonce_field('klaviyo_key_api_options_verify');?>
 
-            <input type="password" name="klaviyo_private_api_key" placeholder="Enter API Key" value="<?php echo $api_key ? esc_attr( $api_key ) : '' ; ?>">
-            <input type="hidden" name="action" value="klaviyo_key_external_api">			 
+            <input type="password" name="klaviyo_private_api_key" placeholder="Enter API Key" value="<?php echo $api_key ? esc_attr($api_key) : ''; ?>">
+            <input type="hidden" name="action" value="klaviyo_key_external_api">
             <input type="submit" name="submit" id="submit" class="update-button button button-primary" value="Update API Key"  />
-        </form> 
+        </form>
     </div>
     <?php
 }
 
-add_action( 'admin_post_klaviyo_key_external_api', 'klaviyo_key_submit_api_key' );
+add_action('admin_post_klaviyo_key_external_api', 'klaviyo_key_submit_api_key');
 
-function klaviyo_key_submit_api_key() {
+function klaviyo_key_submit_api_key()
+{
 
     // Make sure user actually has the capability to edit the options
-    if(!current_user_can( 'edit_theme_options' )){
-      wp_die("You do not have permission to view this page.");
+    if (!current_user_can('edit_theme_options')) {
+        wp_die("You do not have permission to view this page.");
     }
-  
-    // pass in the nonce ID from our form's nonce field - if the nonce fails this will kill script
-    check_admin_referer( 'klaviyo_key_api_options_verify');
 
+    // pass in the nonce ID from our form's nonce field - if the nonce fails this will kill script
+    check_admin_referer('klaviyo_key_api_options_verify');
 
     if (isset($_POST['klaviyo_private_api_key'])) {
 
-
-        $api_key = sanitize_text_field( $_POST['klaviyo_private_api_key'] );
+        $api_key = sanitize_text_field($_POST['klaviyo_private_api_key']);
 
         $api_exists = get_option('klaviyo_private_api_key');
 
