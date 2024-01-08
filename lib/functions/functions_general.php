@@ -798,3 +798,29 @@ function disable_gutenberg($is_enabled, $post_type) {
 
 }
 add_filter('use_block_editor_for_post_type', 'disable_gutenberg', 10, 2);
+
+add_action( 'admin_init', 'bbloomer_generate_coupons_admin' );
+ 
+function bbloomer_generate_coupons_admin() { 
+   if ( isset( $_REQUEST['bb-gen-coupons'] ) ) {      
+      if ( ! current_user_can( 'manage_woocommerce' ) ) {
+         wp_die( 'You do not have permission to bulk generate coupons' );
+      }     
+      $number_of_coupons = 100; // DEFINE BULK QUANTITY     
+      for ( $i = 1; $i <= $number_of_coupons; $i++ ) {
+         $coupon = new WC_Coupon();
+         $random_code = "LC10" . bin2hex( random_bytes( 2 ) ); // 16 CHARS PHP 7+ ONLY
+         if ( wc_get_coupon_id_by_code( $random_code ) ) continue; // SKIP IF CODE EXISTS 
+         $coupon->set_code( $random_code );
+         $coupon->set_description( 'Coupon generated programmatically (' . $i . '/' . $number_of_coupons . ')' );
+         $coupon->set_discount_type( 'percent' );
+         $coupon->set_amount( 10 );
+         $coupon->set_minimum_amount( 1 );
+         $coupon->set_individual_use( true );
+         $coupon->set_usage_limit(1);
+        //  $coupon->set_product_categories( array( 54, 55 ) );
+        //  $coupon->set_usage_limit_per_user( 1 );
+         $coupon->save();        
+      }  
+   }
+}
