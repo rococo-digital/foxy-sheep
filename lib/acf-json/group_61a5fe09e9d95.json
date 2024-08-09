@@ -38,7 +38,8 @@
                         "facebook-f": "Facebook",
                         "twitter": "Twitter",
                         "instagram": "Instagram",
-                        "linkedin-in": "Linked In"
+                        "linkedin-in": "Linked In",
+                        "youtube": "YouTube"
                     },
                     "default_value": false,
                     "allow_null": 0,
