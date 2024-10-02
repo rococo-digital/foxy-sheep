@@ -5,6 +5,8 @@
   position: relative;
   padding: 4.625rem 0;
 
+  
+
   @include media-breakpoint-down(lg){
     background-position: 75% 50%;
   }
@@ -37,10 +39,18 @@
     z-index: 9;
   }
 
-  h1 {
+  h1, .hero__subtitle * {
     color: $white;
-    margin-bottom: 25px;
+    margin-bottom: 1rem;
   }
+
+  .hero__subtitle .green{
+    color: $green200;
+  }
+  .hero__subtitle blockquote{
+    margin-left: 1rem;
+  }
+
 
 
 }

@@ -6,6 +6,7 @@ if(empty($block['data'])){
 $title = get_field('title');
 $link = get_field('link');
 $bg = get_field('background');
+$subtitle = get_field('subtitle');
 
 ?>
 
@@ -16,6 +17,7 @@ $bg = get_field('background');
                <div class="hero__content" data-aos="fade-up">
                    <h1><?php echo $title;?></h1>
                </div>
+               <div class="hero__subtitle" data-aos="fade-up"><?php echo $subtitle ?></div>
                 <div class="hero__link" data-aos="fade-up">
                     <?php
                     if( $link ):
@@ -23,7 +25,7 @@ $bg = get_field('background');
                         $link_title = $link['title'];
                         $link_target = $link['target'] ? $link['target'] : '_self';
                         ?>
-                        <a class="button button--primary" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?> ></a>
+                        <a class="button button--secondary" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?> ></a>
                     <?php endif; ?>
                 </div>
             </div>

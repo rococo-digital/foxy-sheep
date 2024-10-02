@@ -1059,3 +1059,17 @@ function klaviyo_key_submit_api_key()
     // Redirect to same page with status=1 to show our options updated banner
     wp_redirect($_SERVER['HTTP_REFERER'] . '&status=1');
 }
+
+
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
+
+add_action( 'woocommerce_single_product_summary', 'my_woocommerce_template_single_rating', 10 );
+
+function my_woocommerce_template_single_rating() {
+    global $product;
+
+    if ( $product->post->comment_status === 'open' )
+        wc_get_template( 'single-product/rating.php' );
+
+    return true;
+}
